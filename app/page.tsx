@@ -24,7 +24,8 @@ export default function CryptoPage() {
         'headshot_6.mp3',
         'hugooo.mp3',
         'salut-princesse.mp3',
-        'bebou.mp3'
+        'bebou.mp3',
+        'youtube-uwuuuuu.mp3'
     ];
 
     useEffect(() => {

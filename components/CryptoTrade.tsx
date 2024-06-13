@@ -36,7 +36,8 @@ interface Props {
 }
 
 const CryptoTrade: FC<Props> = ({ data }) => {
-
+    console.log('data:', data);
+    
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [sortBy, setSortBy] = useState<string>('');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
