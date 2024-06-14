@@ -8,25 +8,6 @@ export const dynamic = 'force-dynamic';
 
 export default function CryptoPage() {
     const [data, setData] = useState([]);
-    const audioRef = useRef<HTMLAudioElement>(null); // Référence à l'élément audio
-
-    // Liste des chemins vers les fichiers audio
-    const audioFiles = [
-        'Call of Duty Modern Warfare 2 Challenge Track.mp3',
-        'destroyed.mp3',
-        'flaqt.mp3',
-        'rizz-sounds.mp3',
-        'granataaaa.mp3',
-        'lets-do-this.mp3',
-        'fart-with-reverb_NcgStsA.mp3',
-        'bebou.mp3',
-        'youtube-uwuuuuu.mp3',
-        'headshot_6.mp3',
-        'hugooo.mp3',
-        'salut-princesse.mp3',
-        'bebou.mp3',
-        'youtube-uwuuuuu.mp3'
-    ];
 
     useEffect(() => {
         // Fonction pour récupérer les données
@@ -40,16 +21,6 @@ export default function CryptoPage() {
                 console.log('Données:', result.data);
                 
                 setData(result.data.filter((crypto: { symbol: string; }) => crypto.symbol.endsWith('USDT')));
-                // Jouer le son après la mise à jour des données
-                // Sélectionner aléatoirement un son de la liste
-                const randomIndex = Math.floor(Math.random() * audioFiles.length);
-                const randomAudio = audioFiles[randomIndex];
-
-                // Changer la source de l'élément audio et jouer le son
-                if (audioRef.current) {
-                    audioRef.current.src = randomAudio;
-                    audioRef.current.play();
-                }
 
             } catch (error) {
                 console.error('Erreur:', error);
@@ -70,7 +41,6 @@ export default function CryptoPage() {
     return (
         <div>
             <CryptoTrade data={data} />
-            <audio ref={audioRef} />
         </div>
     );
 }
